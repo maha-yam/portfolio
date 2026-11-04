@@ -17,6 +17,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("fr");
   const [dark, setDark] = useState(false);
 
+  // Sync with the theme/lang chosen before hydration (inline script + localStorage).
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setDark(document.documentElement.classList.contains("dark"));
     try {
@@ -24,6 +26,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       if (saved === "fr" || saved === "en") setLangState(saved);
     } catch {}
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
     document.documentElement.lang = lang;
