@@ -1,6 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
-import { About, Contact, Education, Experience, Footer, Projects, Skills } from "@/components/Sections";
+import { About, Certifications, Contact, Education, Experience, Footer, Projects, Skills } from "@/components/Sections";
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Skills />
+        <Certifications />
         <Education />
         <Contact />
       </main>

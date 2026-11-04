@@ -3,11 +3,12 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Check, ChevronDown, Copy, Download, Github, Linkedin, Lock, Mail, MapPin, X } from "lucide-react";
+import { ArrowUpRight, Award, Check, ChevronDown, Copy, Download, Github, Linkedin, Lock, Mail, MapPin, X } from "lucide-react";
 import { useApp } from "./Providers";
 import { Reveal, Section, Tag } from "./ui";
 import {
   categories,
+  certifications,
   education,
   experiences,
   leadership,
@@ -310,10 +311,36 @@ export function Skills() {
   );
 }
 
+export function Certifications() {
+  const { t } = useApp();
+  return (
+    <Section id="certifications" index="05" title={t(ui.sections.certifications)}>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {certifications.map((c, i) => (
+          <Reveal key={c.name} delay={(i % 3) * 0.05}>
+            <div className="group flex h-full items-start gap-4 rounded-2xl border border-border bg-surface p-5 transition hover:-translate-y-0.5 hover:border-accent/60">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent transition group-hover:scale-110">
+                <Award size={20} />
+              </span>
+              <div>
+                <p className="font-semibold leading-snug">{c.name}</p>
+                <p className="mt-1.5 font-mono text-xs text-muted">
+                  {c.year ? `${c.year} · ` : ""}
+                  {t(c.tag)}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
 export function Education() {
   const { t } = useApp();
   return (
-    <Section id="education" index="05" title={t(ui.sections.education)}>
+    <Section id="education" index="06" title={t(ui.sections.education)}>
       <div className="grid gap-8 lg:grid-cols-2">
         <Reveal>
           <h3 className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
@@ -374,7 +401,7 @@ export function Contact() {
     } catch {}
   };
   return (
-    <Section id="contact" index="06" title={t(ui.sections.contact)}>
+    <Section id="contact" index="07" title={t(ui.sections.contact)}>
       <Reveal>
         <div className="rounded-3xl border border-border bg-surface p-6 sm:p-10">
           <p className="max-w-2xl text-lg leading-relaxed text-muted">{t(ui.contactText)}</p>
@@ -410,7 +437,7 @@ export function Contact() {
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-medium hover:border-accent"
             >
-              <Github size={16} /> GitHub
+              <Github size={16} /> github.com/maha-yam
             </a>
             <a
               href={links.cv}

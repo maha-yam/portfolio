@@ -14,6 +14,7 @@ export const ui = {
     experience: { fr: "Expérience", en: "Experience" },
     projects: { fr: "Projets", en: "Projects" },
     skills: { fr: "Compétences", en: "Skills" },
+    certifications: { fr: "Certifications", en: "Certifications" },
     education: { fr: "Parcours", en: "Background" },
     contact: { fr: "Contact", en: "Contact" },
   },
@@ -41,6 +42,7 @@ export const ui = {
     experience: { fr: "Expérience professionnelle", en: "Work experience" },
     projects: { fr: "Projets", en: "Projects" },
     skills: { fr: "Compétences techniques", en: "Technical skills" },
+    certifications: { fr: "Certifications", en: "Certifications" },
     education: { fr: "Formation & engagement", en: "Education & leadership" },
     contact: { fr: "Travaillons ensemble", en: "Let's work together" },
   },
@@ -438,6 +440,18 @@ export const skills: { title: T; items: string[] }[] = [
     title: { fr: "Développement", en: "Software development" },
     items: ["Java", "C/C++", "PHP", "JavaScript", "TypeScript", "React", ".NET", "Node.js", "Django"],
   },
+];
+
+export const certifications: { year: string; name: string; tag: T }[] = [
+  { year: "2026", name: "Oracle Cloud Infrastructure AI Foundations Associate", tag: { fr: "Cloud & IA", en: "Cloud & AI" } },
+  { year: "2026", name: "Python for Data Science, AI & Development", tag: { fr: "Python & IA", en: "Python & AI" } },
+  { year: "2025", name: "Introduction to Big Data", tag: { fr: "Big Data", en: "Big Data" } },
+  { year: "2025", name: "Agile Project Management", tag: { fr: "Gestion de projet", en: "Project management" } },
+  { year: "2025", name: "React Native", tag: { fr: "Mobile", en: "Mobile" } },
+  { year: "2025", name: "Recherche documentaire", tag: { fr: "Recherche", en: "Research" } },
+  { year: "2024", name: "Software Engineering: Software Design and Project Management", tag: { fr: "Génie logiciel", en: "Software engineering" } },
+  { year: "", name: "React Basics", tag: { fr: "Web", en: "Web" } },
+  { year: "", name: "Introduction à la POO (C++)", tag: { fr: "C++", en: "C++" } },
 ];
 
 export const education = [

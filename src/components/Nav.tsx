@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Github, Menu, Moon, Sun, X } from "lucide-react";
 import { useApp } from "./Providers";
 import { links, ui } from "@/content";
 
-const ids = ["about", "experience", "projects", "skills", "education", "contact"] as const;
+const ids = ["about", "experience", "projects", "skills", "certifications", "education", "contact"] as const;
 
 export function Nav() {
   const { t, lang, setLang, dark, toggleDark } = useApp();
@@ -43,7 +43,7 @@ export function Nav() {
           Maha El Yamni<span className="text-accent">.</span>
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex">
           {ids.map((id) => (
             <li key={id}>
               <a
@@ -69,6 +69,16 @@ export function Nav() {
           >
             {lang === "fr" ? "EN" : "FR"}
           </button>
+          <a
+            href={links.github}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-md border border-border p-1.5 hover:bg-surface-2"
+            aria-label="GitHub"
+            title="github.com/maha-yam"
+          >
+            <Github size={16} />
+          </a>
           <button
             onClick={toggleDark}
             className="rounded-md border border-border p-1.5 hover:bg-surface-2"
@@ -83,7 +93,7 @@ export function Nav() {
           >
             CV
           </a>
-          <button className="rounded-md p-1.5 md:hidden" onClick={() => setOpen((o) => !o)} aria-label="Menu">
+          <button className="rounded-md p-1.5 lg:hidden" onClick={() => setOpen((o) => !o)} aria-label="Menu">
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
@@ -95,7 +105,7 @@ export function Nav() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-b border-border bg-bg px-4 md:hidden"
+            className="overflow-hidden border-b border-border bg-bg px-4 lg:hidden"
           >
             {ids.map((id) => (
               <li key={id}>
